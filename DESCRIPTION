@@ -1,0 +1,29 @@
+Package: treatledger
+Type: Package
+Title: Standardised Cumulative Treatment Exposure for Childhood Cancer Survivorship Research
+Version: 0.1.0
+Authors@R:
+    person("Nayiga Joselyn", "Mirembe", role = c("aut", "cre", "cph"),
+           email = "jnmirembe7@gmail.com")
+Description: Calculates cumulative treatment exposures used in late-effects
+    research on childhood cancer survivors from a simple table of treatment
+    records. Provides the doxorubicin-equivalent anthracycline dose, the
+    cyclophosphamide equivalent dose for alkylating agents (Green et al. 2014
+    <doi:10.1002/pbc.24679>) and cumulative radiotherapy dose by body region.
+    Conversion factors are stored as named, cited and versioned sets, including
+    the Children's Oncology Group Long-Term Follow-Up Guidelines version 6.0
+    factors and the estimates of Feijen et al. (2019)
+    <doi:10.1001/jamaoncol.2018.6634>, and every result records the set used.
+    For research use only; not for guiding individual patient care.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.1.0)
+Imports: utils
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+RoxygenNote: 7.3.1

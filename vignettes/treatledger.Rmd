@@ -1,0 +1,82 @@
+---
+title: "Getting started with treatledger"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with treatledger}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+treatledger turns a table of treatment records into the cumulative exposures
+used in late-effects research on childhood cancer survivors. It is a research
+tool and does not give care recommendations.
+
+```{r setup}
+library(treatledger)
+```
+
+## 1. Prepare your data
+
+Use one row per treatment course. The columns can have any names; tell the
+functions which is which. The demonstration cohort is invented.
+
+```{r}
+treatledger_demo
+```
+
+Doses of drugs should be cumulative and in mg/m². Radiotherapy doses can be
+in Gy or cGy, with the treated region in its own column.
+
+## 2. Choose a factor set
+
+The anthracycline factor sets disagree, so treatledger makes you choose one
+and records it in every result.
+
+```{r}
+tl_factor_sets()
+anthracycline_factors[, c("set", "agent", "factor", "note")]
+```
+
+## 3. Calculate exposures
+
+```{r}
+tl_dox_equivalent(treatledger_demo, set = "cog_v6")
+tl_ced(treatledger_demo)
+tl_radiation(treatledger_demo)
+```
+
+Or all at once:
+
+```{r}
+tl_summarise(treatledger_demo, anthracycline_set = "cog_v6")
+```
+
+## 4. Check how much the factor set matters
+
+Running the same cohort under both anthracycline sets is a simple sensitivity
+analysis.
+
+```{r}
+cog <- tl_dox_equivalent(treatledger_demo, set = "cog_v6")
+fei <- tl_dox_equivalent(treatledger_demo, set = "feijen2019")
+data.frame(patient_id = cog$patient_id,
+           cog_v6 = cog$dox_equivalent_mg_m2,
+           feijen2019 = fei$dox_equivalent_mg_m2)
+```
+
+## 5. Read the flags
+
+The `flags` column reports anything you should check: doses converted from
+mg/kg, missing doses, unrecognised units and radiotherapy with no region. A
+patient with a missing dose gets `NA` rather than a partial total.
+
+## Reporting
+
+When you publish results, state the treatledger version and the factor sets
+used, for example: "Cumulative exposures were calculated with treatledger
+0.1.0 using the COG v6.0 anthracycline factors and the cyclophosphamide
+equivalent dose of Green et al. (2014)."
