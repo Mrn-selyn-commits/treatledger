@@ -1,5 +1,7 @@
 # treatledger
 
+[![R-CMD-check](https://github.com/Mrn-selyn-commits/treatledger/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Mrn-selyn-commits/treatledger/actions/workflows/R-CMD-check.yaml)
+
 **Standardised cumulative treatment exposure for childhood cancer survivorship research.**
 
 treatledger turns a simple table of treatment records into the cumulative
@@ -77,7 +79,11 @@ coefficients are still to be confirmed against the full text of Green et al.
 - Children's Oncology Group (2023). *Long-Term Follow-Up Guidelines for Survivors of Childhood, Adolescent, and Young Adult Cancers*, Version 6.0.
 - Feijen EAM et al. (2019). Derivation of anthracycline and anthraquinone equivalence ratios to doxorubicin for late-onset cardiotoxicity. *JAMA Oncology* 5(6):864–871. doi:10.1001/jamaoncol.2018.6634
 - Green DM et al. (2014). The cyclophosphamide equivalent dose as an approach for quantifying alkylating agent exposure. *Pediatric Blood & Cancer* 61(1):53–67. doi:10.1002/pbc.24679
+## Citation
 
+```r
+citation("treatledger")
+```
 ## Licence
 
 MIT © 2026 Nayiga Joselyn Mirembe
