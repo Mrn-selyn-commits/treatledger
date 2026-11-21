@@ -16,6 +16,8 @@ Description: Calculates cumulative treatment exposures used in late-effects
     <doi:10.1001/jamaoncol.2018.6634>, and every result records the set used.
     For research use only; not for guiding individual patient care.
 License: MIT + file LICENSE
+URL: https://github.com/Mrn-selyn-commits/treatledger
+BugReports: https://github.com/Mrn-selyn-commits/treatledger/issues
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 4.1.0)
