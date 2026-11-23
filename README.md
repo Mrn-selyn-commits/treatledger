@@ -70,9 +70,10 @@ The factor tables are also in `inst/extdata` as CSV files.
 
 ## Status
 
-Version 0.1.0, in development. Before the first release, the CED
-coefficients are still to be confirmed against the full text of Green et al.
-(2014); they currently match two independent clinical guidance documents.
+Version 0.1.0, in development. All ten CED coefficients have been checked
+against the equation in the original article (Green et al. 2014, *Pediatric
+Blood & Cancer* 61(1):53–67). Note that the coefficients reflect equivalent
+acute haematological toxicity, not equivalent late effects.
 
 ## References
 
