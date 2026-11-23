@@ -1,5 +1,6 @@
 # treatledger (development version)
 
+* Checked all ten cyclophosphamide equivalent dose coefficients against the equation in the original article (Green et al. 2014, *Pediatric Blood & Cancer*), and recorded the check in the `ced_coefficients` notes.
 * Added a citation file, so `citation("treatledger")` shows how to cite the package, and a check-status badge and project links.
 # treatledger 0.1.0
 

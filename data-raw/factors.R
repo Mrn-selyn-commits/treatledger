@@ -36,10 +36,9 @@ ced_coefficients <- data.frame(
             "mechlorethamine", "busulfan"),
   factor = c(1.0, 0.244, 0.857, 14.286, 15.0, 16.0, 40, 50, 100, 8.823),
   source = green,
-  location = "CED equation",
-  note = paste("Coefficient as reproduced identically in BC Children's Hospital (2023)",
-               "and RCH Melbourne (2023) guidance; check against original full text",
-               "before release"),
+  location = "Methods, Cyclophosphamide Equivalent Dose Calculation",
+  note = paste("Checked against the CED equation in the original article",
+               "(Methods, Cyclophosphamide Equivalent Dose Calculation)"),
   stringsAsFactors = FALSE
 )
 ced_coefficients$note[ced_coefficients$agent == "carmustine"] <-
